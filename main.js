@@ -4,7 +4,7 @@ let h = 20;
 let world = Array(h);
 for(let i = 0; i < world.length; i ++){
   world[i] = Array(w);
-  world[i].fill("O");
+  world[i].fill("[ ]");
 }
 
 function tick(){
