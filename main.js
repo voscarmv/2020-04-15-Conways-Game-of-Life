@@ -15,6 +15,9 @@ world[(Math.floor(h/2))+1][(Math.floor(w/2))+2] = "[0]";
 let world2 = copyworld(world);
 
 
+document.getElementById("conway").innerHTML = display(world);
+
+
 function tick(){
 //  document.getElementById("conway").innerHTML = "<h2>Hello world!</h2>"
 //  document.getElementById("conway").innerHTML = "h: " + world.length + ", h:" + world[0];  
@@ -23,23 +26,25 @@ function tick(){
     for(let j = 0; j < w; j++){
       let neighborz = neighborhood(j,i);
       if(neighborz < 2){
+        // alert("die");
         world2[i][j] = "[ ]";
       }
       if(neighborz >= 2 && neighborz <= 3){
+        alert("live");
         world2[i][j] = "[O]";
       }
       if(neighborz > 3){
+        // alert("live");
         world2[i][j] = "[ ]";
       }
     }
   }
-  world = [];
   world = copyworld(world2);
   document.getElementById("conway").innerHTML = display(world);
 }
 
-function copyworld(world){
-  return world.map(inner => inner.slice());
+function copyworld(worldx){
+  return worldx.map(inner => inner.slice());
 }
 
 function display(world){
