@@ -43,6 +43,8 @@ function tick(){
   }
   world = copyworld(world2);
   document.getElementById("conway").innerHTML = display(world);
+
+  setTimeout(tick, 1000);
 }
 
 function copyworld(worldx){
