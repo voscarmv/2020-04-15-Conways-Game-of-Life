@@ -30,8 +30,8 @@ function tick(){
         world2[i][j] = "[ ]";
       }
       if(neighborz >= 2 && neighborz <= 3){
-        alert("live");
-        world2[i][j] = "[O]";
+//        alert("live");
+        world2[i][j] = "[0]";
       }
       if(neighborz > 3){
         // alert("live");
