@@ -1,6 +1,6 @@
 
-let w = 30;
-let h = 20;
+let w = 40;
+let h = 30;
 let world = Array(h);
 for(let i = 0; i < world.length; i ++){
   world[i] = Array(w);
@@ -30,10 +30,10 @@ function tick(){
       if(neighborz < 2){
         world2[i][j] = "[ ]";
       }
-      if(neighborz >= 2 && neighborz <= 3 && world[j][i] != "[ ]"){
+      if(neighborz >= 2 && neighborz <= 3 && world[i][j] != "[ ]"){
         world2[i][j] = "[0]";
       }
-      if(neighborz == 3){
+      if(neighborz == 3 && world[i][j] == "[ ]"){
         world2[i][j] = "[0]";
       }        
       if(neighborz > 3){
