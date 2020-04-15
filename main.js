@@ -8,9 +8,11 @@ for(let i = 0; i < world.length; i ++){
 }
 // seed
 world[(Math.floor(h/2))][(Math.floor(w/2))] = "[0]";
-world[(Math.floor(h/2))-1][(Math.floor(w/2))-1] = "[0]";
+// world[(Math.floor(h/2))-1][(Math.floor(w/2))-1] = "[0]";
 world[(Math.floor(h/2))+1][(Math.floor(w/2))+1] = "[0]";
 world[(Math.floor(h/2))+1][(Math.floor(w/2))+2] = "[0]";
+world[(Math.floor(h/2))-1][(Math.floor(w/2))+1] = "[0]";
+world[(Math.floor(h/2))+1][(Math.floor(w/2))] = "[0]";
 
 let world2 = copyworld(world);
 
@@ -26,15 +28,15 @@ function tick(){
     for(let j = 0; j < w; j++){
       let neighborz = neighborhood(j,i);
       if(neighborz < 2){
-        // alert("die");
         world2[i][j] = "[ ]";
       }
-      if(neighborz >= 2 && neighborz <= 3){
-//        alert("live");
+      if(neighborz >= 2 && neighborz <= 3 && world[j][i] != "[ ]"){
         world2[i][j] = "[0]";
       }
+      if(neighborz == 3){
+        world2[i][j] = "[0]";
+      }        
       if(neighborz > 3){
-        // alert("live");
         world2[i][j] = "[ ]";
       }
     }
